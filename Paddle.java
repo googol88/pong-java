@@ -55,7 +55,14 @@ public class Paddle{
     g.fillRect(this.x, this.y, WIDTH, HEIGHT);
   }
 
-  public boolean isControlled() {
-    return this.computerControlled; // again, the instance's attribute/state
+  // getter methods
+  public boolean getComputerControlled() {
+    return this.computerControlled; // "this" not needed, just to show it as part of an instance
+  }
+  public Color getColor() {
+    return this.color;
+  }
+  public int getScore() {
+    return this.score;
   }
 }

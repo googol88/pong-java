@@ -8,12 +8,13 @@ public class Scoreboard {
   
   public Scoreboard(Paddle paddle) {
     this.paddle = paddle;
-    x = 150;
+    x = paddle.getComputerControlled() ? GamePanel.WIDTH/4 - 18 : 3*GamePanel.WIDTH/4 - 18;
     y = 75;
-    if(paddle.isControlled()) {
-      x = GamePanel.WIDTH/4 - 18;
-    } else {
-      x = 3*GamePanel.WIDTH/4 - 18;
-    }
+  }
+
+  public void render(Graphics g) {
+    g.setColor(paddle.getColor());
+    g.setFont(FONT);
+    g.drawString(Integer.toString(paddle.getScore()), this.x, this.y);
   }
 }

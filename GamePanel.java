@@ -32,6 +32,7 @@ public class GamePanel extends JPanel{
   public void paintComponent(Graphics g) {
     leftPaddle.render(g); // call Graphics methods from Paddle class
     rightPaddle.render(g);
+    ball.render(g);
   }
   
 }

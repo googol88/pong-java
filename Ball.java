@@ -1,4 +1,5 @@
 import java.awt.Color;
+import java.awt.Graphics;
 
 public class Ball {
   public static final int SIZE = 10;
@@ -37,7 +38,7 @@ public class Ball {
     speed = 3;
     this.color = color;
   }
-
+  
   // helper methods can be private
   private static int generateThetaValue() {
     int randTheta = (int) (Math.random() * 338); // 0-84 -> 85, 96-264 -> 169, 276-359 -> 84 = [338]
@@ -48,5 +49,10 @@ public class Ball {
       randTheta += 11;
     }
     return randTheta;
+  }
+
+  public void render(Graphics g) {
+    g.setColor(this.color); // the instance's attribute/state
+    g.fillRect(this.x, this.y, SIZE, SIZE);
   }
 }
