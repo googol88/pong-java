@@ -1,6 +1,6 @@
 # 🏸 *PONG* 🏸
 The classic, implemented in Java
 
-![coords](https://i.imgur.com/Z29l2qw.png)
+![current progress](https://i.imgur.com/Tn6FbYF.png)
 
 *Built for AP CSA :P*
