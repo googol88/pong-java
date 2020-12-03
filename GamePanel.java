@@ -9,9 +9,9 @@ public class GamePanel extends JPanel{
   public static final int X_GAP = 50;
 
   // colors
-  public static final Color LP_CLR = new Color(0, 255, 0);
-  public static final Color RP_CLR = new Color(0, 0, 255);
-  public static final Color B_CLR  = new Color(255, 0, 0);
+  public static final Color LP_CLR = new Color(71, 71, 235);
+  public static final Color RP_CLR = new Color(235, 71, 153);
+  public static final Color B_CLR  = new Color(71, 235, 153);
 
   // attributes
   private Paddle leftPaddle, rightPaddle;
