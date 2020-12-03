@@ -1,4 +1,5 @@
 import java.awt.Color;
+import java.awt.Graphics;
 
 public class Paddle{
   // common across class
@@ -49,7 +50,12 @@ public class Paddle{
   }
 
   // methods (behavior)
+  public void render(Graphics g) {
+    g.setColor(this.color); // the instance's attribute/state
+    g.fillRect(this.x, this.y, WIDTH, HEIGHT);
+  }
+
   public boolean isControlled() {
-    return paddle.computerControlled;
+    return this.computerControlled; // again, the instance's attribute/state
   }
 }

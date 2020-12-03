@@ -1,4 +1,4 @@
-import java.swing.JFrame;
+import javax.swing.JFrame;
 
 public class Main extends JFrame{
 
@@ -8,9 +8,10 @@ public class Main extends JFrame{
     GamePanel pongBoard = new GamePanel();
     add(pongBoard);
   }
+
   public static void main(String[] args) {
-    // test out constructors here
     Main game = new Main();
     game.setVisible(true);
   }
+
 }

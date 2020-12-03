@@ -13,7 +13,7 @@ public class Scoreboard {
     if(paddle.isControlled()) {
       x = GamePanel.WIDTH/4 - 18;
     } else {
-      
+      x = 3*GamePanel.WIDTH/4 - 18;
     }
   }
 }

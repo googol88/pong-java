@@ -21,12 +21,17 @@ public class GamePanel extends JPanel{
   // constructor
   public GamePanel() {
     setSize(WIDTH, HEIGHT);
-    leftPanel = new Paddle(LP_CLR);
+    leftPanel = new Paddle(true, LP_CLR);
     rightPanel = new Paddle(false, RP_CLR);
     leftScoreboard = new Scoreboard(leftPanel);
     rightScoreboard = new Scoreboard(rightPanel);
     ball = new Ball(B_CLR);
   }
 
+  @Override
+  public void paintComponent(Graphics g) {
+    leftPaddle.render(g); // call Graphics methods from Paddle class
+    rightPaddle.render(g);
+  }
   
 }
