@@ -14,17 +14,17 @@ public class GamePanel extends JPanel{
   public static final Color B_CLR  = new Color(255, 0, 0);
 
   // attributes
-  private Paddle leftPanel, rightPanel;
+  private Paddle leftPaddle, rightPaddle;
   private Scoreboard leftScoreboard, rightScoreboard;
   private Ball ball;
 
   // constructor
   public GamePanel() {
     setSize(WIDTH, HEIGHT);
-    leftPanel = new Paddle(true, LP_CLR);
-    rightPanel = new Paddle(false, RP_CLR);
-    leftScoreboard = new Scoreboard(leftPanel);
-    rightScoreboard = new Scoreboard(rightPanel);
+    leftPaddle = new Paddle(true, LP_CLR);
+    rightPaddle = new Paddle(false, RP_CLR);
+    leftScoreboard = new Scoreboard(leftPaddle);
+    rightScoreboard = new Scoreboard(rightPaddle);
     ball = new Ball(B_CLR);
   }
 
