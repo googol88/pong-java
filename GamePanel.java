@@ -11,7 +11,7 @@ public class GamePanel extends JPanel{
   // colors
   public static final Color LP_CLR = new Color(71, 71, 235);
   public static final Color RP_CLR = new Color(235, 71, 153);
-  public static final Color B_CLR  = new Color(71, 235, 153);
+  public static final Color B_CLR  = new Color(194, 71, 235);
 
   // attributes
   private Paddle leftPaddle, rightPaddle;
@@ -33,6 +33,8 @@ public class GamePanel extends JPanel{
     leftPaddle.render(g); // call Graphics methods from Paddle class
     rightPaddle.render(g);
     ball.render(g);
+    leftScoreboard.render(g);
+    rightScoreboard.render(g);
   }
   
 }
