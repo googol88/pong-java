@@ -65,4 +65,9 @@ public class Paddle{
   public int getScore() {
     return this.score;
   }
+
+  // setters
+  public void setScore(int score) {
+    this.score = score;
+  }
 }
