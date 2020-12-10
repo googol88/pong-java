@@ -4,7 +4,7 @@ import java.awt.Graphics;
 public class Ball {
   public static final int SIZE = 10;
   
-  private int x, y, speed, theta;
+  private int x, y, speed, theta; // theta is in degrees
   private Color color;
 
   public Ball() {
@@ -54,5 +54,10 @@ public class Ball {
   public void render(Graphics g) {
     g.setColor(this.color); // the instance's attribute/state
     g.fillRect(this.x, this.y, SIZE, SIZE);
+  }
+
+  public void move() {
+    this.x += speed * Math.cos(Math.toRadians(theta));
+    this.y -= speed * Math.sin(Math.toRadians(theta)); // since increasing y values go downward
   }
 }

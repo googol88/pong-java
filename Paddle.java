@@ -70,4 +70,16 @@ public class Paddle{
   public void setScore(int score) {
     this.score = score;
   }
+
+  // other methods - not sure what to call it
+  public void move() {
+    if (computerControlled) {
+      this.y += this.speed;
+      if (this.y < 0 || this.y + HEIGHT > GamePanel.HEIGHT) { // checks if paddle is above or below the GamePanel
+        this.speed *= -1; // reverse speed
+      }
+    } else {
+
+    }
+  }
 }

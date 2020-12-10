@@ -2,7 +2,11 @@ import javax.swing.JPanel;
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class GamePanel extends JPanel{
+import javax.swing.Timer;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class GamePanel extends JPanel implements ActionListener {
   // use this class to store constants about the Pong gameboard dimensions.
   public static final int WIDTH = 720;
   public static final int HEIGHT = 600;
@@ -21,6 +25,7 @@ public class GamePanel extends JPanel{
   private Paddle leftPaddle, rightPaddle;
   private Scoreboard leftScoreboard, rightScoreboard;
   private Ball ball;
+  private Timer timer;
 
   // constructor
   public GamePanel() {
@@ -31,6 +36,8 @@ public class GamePanel extends JPanel{
     leftScoreboard = new Scoreboard(leftPaddle);
     rightScoreboard = new Scoreboard(rightPaddle);
     ball = new Ball(B_CLR);
+    timer = new Timer(30, this);
+    timer.start();
   }
 
   @Override
@@ -42,6 +49,13 @@ public class GamePanel extends JPanel{
     ball.render(g);
     leftScoreboard.render(g);
     rightScoreboard.render(g);
+  }
+
+  @Override
+  public void actionPerformed(ActionEvent e){
+    leftPaddle.move();
+    ball.move();
+    repaint();
   }
   
   private void drawBackground(Graphics g) {
