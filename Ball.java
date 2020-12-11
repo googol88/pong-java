@@ -60,4 +60,26 @@ public class Ball {
     this.x += speed * Math.cos(Math.toRadians(theta));
     this.y -= speed * Math.sin(Math.toRadians(theta)); // since increasing y values go downward
   }
+
+  // getters
+  public int getX() {
+    return this.x;
+  }
+  public int getY() {
+    return this.y;
+  }
+  public int getTheta() {
+    return this.theta;
+  }
+
+  // setters
+  public void setX(int x) {
+    this.x = x;
+  }
+  public void setY(int y) {
+    this.y = y;
+  }
+  public void setTheta(int theta) {
+    this.theta = theta;
+  }
 }

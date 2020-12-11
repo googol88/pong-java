@@ -35,7 +35,7 @@ public class GamePanel extends JPanel implements ActionListener {
     rightPaddle = new Paddle(false, RP_CLR);
     leftScoreboard = new Scoreboard(leftPaddle);
     rightScoreboard = new Scoreboard(rightPaddle);
-    ball = new Ball(B_CLR);
+    ball = new Ball(0, B_CLR); // temporarily force angle to 0 degrees
     timer = new Timer(30, this);
     timer.start();
   }
@@ -56,6 +56,8 @@ public class GamePanel extends JPanel implements ActionListener {
     leftPaddle.move();
     ball.move();
     repaint();
+    if (this.checkPaddleCollision())
+      ball.setTheta(ball.getTheta()+180); // only turns around 180 degrees, reflection comes later
   }
   
   private void drawBackground(Graphics g) {
@@ -63,5 +65,38 @@ public class GamePanel extends JPanel implements ActionListener {
 	  for(int y = Y_GAP; y < HEIGHT; y += 2*DASH_LEN) {
 		  g.drawLine(WIDTH/2, y, WIDTH/2, y+20);
 	  }
+  }
+
+  private boolean checkPaddleCollision() { // this.checkPaddleCollision
+    // leftPaddle
+    if((ball.getX() < leftPaddle.getX() + Paddle.WIDTH) // left of ball, right of leftPaddle
+        && (ball.getY() < leftPaddle.getY() + Paddle.HEIGHT) // top of ball, bottom of leftPaddle
+        && (ball.getY() + Ball.SIZE > leftPaddle.getY())) // bottom of ball, top of leftPaddle
+    {
+      return true;
+    }
+
+    // rightPaddle
+    else if ((ball.getX() + Ball.SIZE > rightPaddle.getX()) // right of ball, left of rightPaddle
+        && (ball.getY() < rightPaddle.getY() + Paddle.HEIGHT) // top of ball, bottom of leftPaddle
+        && (ball.getY() + Ball.SIZE > rightPaddle.getY())) // bottom of ball, top of rightPaddle
+    {
+      return true;
+    }
+
+    return false;
+  }
+
+  private void updateScore() {
+    /*if (true) {
+      
+    } else {
+      ball.reset();
+    }*/
+  }
+
+  private void reset() {
+    ball.setX(GamePanel.WIDTH/2 - Ball.SIZE/2);
+    ball.setY(GamePanel.HEIGHT/2 - Ball.SIZE/2);
   }
 }
