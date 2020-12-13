@@ -35,7 +35,7 @@ public class GamePanel extends JPanel implements ActionListener {
     rightPaddle = new Paddle(false, RP_CLR);
     leftScoreboard = new Scoreboard(leftPaddle);
     rightScoreboard = new Scoreboard(rightPaddle);
-    ball = new Ball(0 B_CLR); // temporarily force angle to 0 degrees
+    ball = new Ball(0, B_CLR); // temporarily force angle to 0 degrees
     timer = new Timer(30, this);
     timer.start();
   }
