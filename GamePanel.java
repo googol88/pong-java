@@ -70,6 +70,7 @@ public class GamePanel extends JPanel implements ActionListener {
   private boolean checkPaddleCollision() { // this.checkPaddleCollision
     // leftPaddle
     if((ball.getX() < leftPaddle.getX() + Paddle.WIDTH) // left of ball, right of leftPaddle
+        && (ball.getX() > leftPaddle.getX()) // left of ball still right of paddle's left
         && (ball.getY() < leftPaddle.getY() + Paddle.HEIGHT) // top of ball, bottom of leftPaddle
         && (ball.getY() + Ball.SIZE > leftPaddle.getY())) // bottom of ball, top of leftPaddle
     {
@@ -78,6 +79,7 @@ public class GamePanel extends JPanel implements ActionListener {
 
     // rightPaddle
     else if ((ball.getX() + Ball.SIZE > rightPaddle.getX()) // right of ball, left of rightPaddle
+        && (ball.getX() + Ball.SIZE < rightPaddle.getX() + Paddle.WIDTH) // right of ball still left of paddle's right
         && (ball.getY() < rightPaddle.getY() + Paddle.HEIGHT) // top of ball, bottom of leftPaddle
         && (ball.getY() + Ball.SIZE > rightPaddle.getY())) // bottom of ball, top of rightPaddle
     {
