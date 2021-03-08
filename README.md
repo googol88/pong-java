@@ -1,5 +1,5 @@
 # 🏸 *PONG* 🏸
-The classic, implemented in Java
+The classic, implemented in Java (WIP)
 
 ![current progress](https://i.imgur.com/Tn6FbYF.png)
 
